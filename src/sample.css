@@ -1,4 +1,4 @@
-/* App.css */
+App.css
 
 body {
   margin: 0;
@@ -64,10 +64,12 @@ code {
 }
 
 /* Media query for mobile devices */
-
-/* Your existing styles for desktop view */
-
-/* Media query for mobile devices */
+@media screen and (max-width: 600px) {
+  .card {
+    width: calc(100% - 40px); /* Full width with 20px margin on each side */
+    margin: 10px; /* Adjust margin for smaller screens */
+  }
+}
 
 /* App.css */
 
@@ -119,25 +121,6 @@ code {
 
 
 
-/* Media query for screens with a maximum width of 600px */
-@media screen and (max-width: 600px) {
-  .card {
-    width: calc(100% - 20px); /* Adjust margin for smaller screens */
-  }
-
-  .card-container {
-    flex-direction: row; /* Horizontal layout for smaller screens */
-    overflow-x: scroll; /* Enable horizontal scrolling */
-    -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS devices */
-  }
-}
-
-
-
-
-
-
-
 
 /* Add this CSS in your styles file or component */
 
@@ -165,10 +148,8 @@ label {
 }
 
 .inputs {
-  width: 95%;
+  width: 100%;
   padding: 8px;
-  
-
   margin-bottom: 10px;
   box-sizing: border-box;
 }
@@ -191,6 +172,15 @@ button {
   max-height: 100%;
 }
 
+@media (max-width: 768px) {
+  .wrapper {
+    flex-direction: column;
+  }
+  
+  .image-wrapper {
+    order: -1;
+  }
+}
 
 
 .formdiv{
@@ -211,7 +201,6 @@ button {
   margin-top: 5px;
   border-radius: 5px;
   height: 50px;
-  margin-right: 50px;
   border:ghostwhite;
 }
 
@@ -223,7 +212,7 @@ button {
 .form-btns{
   display: flex;
   align-items: end;
-  margin-left:360px;
+  margin-left:270px;
 
 }
 
@@ -252,7 +241,6 @@ button {
 
 .textarea{
 margin-top: 10px;
-width: 95%;
 }
 
 .input-code{
@@ -373,22 +361,9 @@ width: 95%;
     padding: 10px;
   }
 
-  .scroll-form{
-    padding: 10px;
-  }
-
   .image-wrapper {
     order: -1;
   }
-
-  .product-img{
-    order: -1;
-  }
-
-.inputs-price{
-  width: 80%;
-}
-
 }
 
 @media screen and (min-width: 601px) and (max-width: 768px) {
@@ -398,7 +373,6 @@ width: 95%;
 
   .inputs {
     width: 100%;
-    margin:10%;
   }
 
   .form-btns {
@@ -421,42 +395,76 @@ width: 95%;
   }
 
   .image-wrapper {
-    order: 1;
-    margin: 10px;
-    
+    order: -1;
   }
-  .formdiv-1 {
-    flex-direction: column-reverse;
+  .product-img{
+    order: -1;
   }
-
-  .scroll-form {
-    width: 100%;
-  }
-
-  .product-img {
-    margin-top: 20px;
-    width: 100%;
-    border: #2980b9;
-  }
- .textarea{
-    width: 90%;
-    border-radius: 5px;
- }
- .one{
-     font-size: 15px;
- }
- .two{
-  margin-top: 27px;
- }
- .form-btn-back{
-  margin-left: 10px;
- }
- .three{
-  order: -1;
- }
 }
 
 
+/* Add these media queries to your existing styles */
 
+/* For tablets */
+@media screen and (min-width: 601px) and (max-width: 768px) {
+  .scroll-form {
+    padding: 20px;
+  }
 
+  .price {
+    flex-direction: column;
+  }
 
+  .label {
+    width: 100%;
+  }
+
+  .inputs,
+  .inputs-price,
+  .textarea,
+  .input-code {
+    width: 100%;
+  }
+
+  .form-btns {
+    margin-left: 0;
+    flex-direction: column;
+  }
+
+  .form-btn,
+  .form-btn-back {
+    width: 100%;
+  }
+}
+
+/* For mobile devices */
+@media screen and (max-width: 600px) {
+  .scroll-form {
+    padding: 10px;
+  }
+
+  .label {
+    width: 100%;
+  }
+
+  .inputs,
+  .inputs-price,
+  .textarea,
+  .input-code {
+    width: 100%;
+  }
+
+  .form-btns {
+    margin-left: 0;
+    flex-direction: column;
+  }
+
+  .form-btn,
+  .form-btn-back {
+    width: 100%;
+  }
+
+  .price {
+    flex-direction: column;
+  }
+}
